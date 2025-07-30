@@ -1,5 +1,10 @@
-const Header = () => {
-	return <h1>Welcome</h1>
-}
+import { useContext } from "react";
+import LanguageContext from "./LanguageContext";
 
-export default Header
+const Header = () => {
+  const { currentLanguage, translations } = useContext(LanguageContext);
+
+  return <h1>{translations[currentLanguage].welcome}</h1>;
+};
+
+export default Header;

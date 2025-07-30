@@ -1,5 +1,9 @@
-const UserProfile = () => {
-	return <h3>Твой профиль</h3>
-}
+import { useContext } from "react";
+import LanguageContext from "./LanguageContext";
 
-export default UserProfile
+const UserProfile = () => {
+  const { currentLanguage, translations } = useContext(LanguageContext);
+  return <h3>{translations[currentLanguage].profile}</h3>;
+};
+
+export default UserProfile;
