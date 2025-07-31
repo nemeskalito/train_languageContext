@@ -1,9 +1,14 @@
-import { useContext } from "react";
-import LanguageContext from "./LanguageContext";
+import { useContext } from 'react'
+import LanguageContext from './LanguageContext'
+import ThemeContext from './ThemeContext'
 
 const UserProfile = () => {
-  const { currentLanguage, translations } = useContext(LanguageContext);
-  return <h3>{translations[currentLanguage].profile}</h3>;
-};
+	const { currentLanguage, translations } = useContext(LanguageContext)
+	const { currentTheme, theme } = useContext(ThemeContext)
 
-export default UserProfile;
+	return (
+		<h3 style={theme[currentTheme]}>{translations[currentLanguage].profile}</h3>
+	)
+}
+
+export default UserProfile
